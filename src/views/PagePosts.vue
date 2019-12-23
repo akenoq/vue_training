@@ -2,22 +2,22 @@
   <div class="postList">
     Posts
     <div>
-      <post v-for="p in getAllPosts"
+      <post-item v-for="p in getAllPosts"
             :key="p.id"
             :id="p.id"
             :body="p.body"
-            :title="p.title"></post>
+            :title="p.title"></post-item>
     </div>
   </div>
 </template>
 
 <!--ToDo  сделать лоадер -->
 <script>
-import Post from "../components/Post";
+import PostItem from "../components/PostItem";
 import {mapGetters} from "vuex";
 export default {
   name: 'posts',
-  components: {Post},
+  components: {PostItem},
   data() {
     return {}
   },
@@ -31,11 +31,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   .postList {
     margin: 0 auto;
     width: 70%;
-    border-left: 1px solid greenyellow;
-    border-right: 1px solid greenyellow;
+    border-left: 1px solid #42b983;
+    border-right: 1px solid #42b983;
   }
 </style>

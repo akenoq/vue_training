@@ -26,12 +26,16 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .postItem {
         margin: 12px;
         padding: 12px;
-        border: 1px solid greenyellow;
+        border: 1px solid #42b983;
         border-radius: 6px;
         text-align: left;
+
+        &:hover {
+            background: rgba(66, 185, 131, 0.1);
+        }
     }
 </style>
