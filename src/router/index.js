@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Posts from '../views/Posts.vue'
+import PageHome from '../views/PageHome.vue'
+import PagePosts from '../views/PagePosts.vue'
+import PageOnePost from '../views/PageOnePost.vue';
 
 Vue.use(VueRouter);
 
@@ -9,13 +10,18 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home,
+    component: PageHome,
   },
   {
     path: '/posts',
     name: 'posts',
-    component: Posts,
+    component: PagePosts,
   },
+  {
+    path: '/posts/:id',
+    name: 'pageonepost',
+    component: PageOnePost,
+  }
 ];
 
 const router = new VueRouter({

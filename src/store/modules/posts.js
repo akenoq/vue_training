@@ -32,7 +32,7 @@ export default {
             //  {commit -  для мутаций, getters - для геттеров, dispatch - для экшенов}
 
             fetch('https://jsonplaceholder.typicode.com/posts')
-                .then(resp => resp.json()) // переводим в json
+                .then(resp => resp.json()) // переводим в обьект
                 .then(arr => ctx.commit('loadPosts', arr)) // вызываем мутацию для изменения стора
                 .catch(err => console.error('network error'))
         }

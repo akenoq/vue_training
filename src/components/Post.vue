@@ -1,7 +1,8 @@
 <template>
-    <div class="postItem">
+    <div class="postItem" :id="`post_${id}`"> <!-- использование JS  выражений и шаблонных строк -->
         <h3>{{title}}</h3>
         <p>{{body}}</p>
+        <router-link :to="{name: 'pageonepost', params: {id: id}}">На страницу поста  >></router-link>
     </div>
 </template>
 
@@ -9,6 +10,10 @@
     export default {
         name: "Post",
         props: {
+            id: {
+                type: Number,
+                required: true,
+            },
             title: {
                 type: String,
                 required: true,

@@ -4,6 +4,7 @@
     <div>
       <post v-for="p in getAllPosts"
             :key="p.id"
+            :id="p.id"
             :body="p.body"
             :title="p.title"></post>
     </div>
