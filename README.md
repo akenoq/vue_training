@@ -1,4 +1,4 @@
-# vue_crm
+# vue_training
 
 ## Project setup
 ```
