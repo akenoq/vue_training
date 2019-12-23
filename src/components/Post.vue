@@ -1,6 +1,7 @@
 <template>
     <div class="postItem">
-        POST {{title}} {{body}}
+        <h3>{{title}}</h3>
+        <p>{{body}}</p>
     </div>
 </template>
 
@@ -26,5 +27,6 @@
         padding: 12px;
         border: 1px solid greenyellow;
         border-radius: 6px;
+        text-align: left;
     }
 </style>

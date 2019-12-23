@@ -2,7 +2,7 @@
   <div class="postList">
     Posts
     <div>
-      <post v-for="p in posts"
+      <post v-for="p in getAllPosts"
             :key="p.id"
             :body="p.body"
             :title="p.title"></post>
@@ -10,26 +10,22 @@
   </div>
 </template>
 
+<!--ToDo  сделать лоадер -->
 <script>
 import Post from "../components/Post";
+import {mapGetters} from "vuex";
 export default {
   name: 'posts',
   components: {Post},
   data() {
-    return {
-      posts: [
-        {
-          id: 1,
-          title: 'title 1',
-          body: 'body 1',
-        },
-        {
-          id: 2,
-          title: 'title 2',
-          body: 'body 2',
-        }
-      ]
-    }
+    return {}
+  },
+  computed: {
+    // mapGetters ПРОКСИРУЕТ ГЕТТЕРЫ хранилища в локальные ВЫЧИСЛЯЕМЫЕ СВОЙСТВА компонента
+    ...mapGetters(['getAllPosts']),
+  },
+  mounted: function () { // НИКОГДА не использовать стрелочные в свойствах экз и колбэках
+    this.$store.dispatch('fetchPosts');
   }
 }
 </script>
