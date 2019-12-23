@@ -1,15 +1,36 @@
 <template>
   <div class="postList">
     Posts
+    <div>
+      <post v-for="p in posts"
+            :key="p.id"
+            :body="p.body"
+            :title="p.title"></post>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
+import Post from "../components/Post";
 export default {
   name: 'posts',
+  components: {Post},
+  data() {
+    return {
+      posts: [
+        {
+          id: 1,
+          title: 'title 1',
+          body: 'body 1',
+        },
+        {
+          id: 2,
+          title: 'title 2',
+          body: 'body 2',
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -19,11 +40,5 @@ export default {
     width: 70%;
     border-left: 1px solid greenyellow;
     border-right: 1px solid greenyellow;
-  }
-
-  .postItem {
-    padding: 12px;
-    border: 1px solid greenyellow;
-    border-radius: 6px;
   }
 </style>
