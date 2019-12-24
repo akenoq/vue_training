@@ -6,7 +6,8 @@
             :key="p.id"
             :id="p.id"
             :body="p.body"
-            :title="p.title"></post-item>
+            :title="p.title"
+            :like="p.like"></post-item>
     </div>
   </div>
 </template>
