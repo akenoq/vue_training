@@ -14,10 +14,10 @@
 <!-- ToDo использовать mapMutations -->
 <script>
     export default {
-        name: "Post",
+        name: "PostItem",
         props: {
             id: {
-                type: Number,
+                type: Number, // null и undefined проходят проверку любого типа
                 required: true,
             },
             title: {

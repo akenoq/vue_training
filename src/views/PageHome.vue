@@ -1,15 +1,15 @@
 <template>
     <div>
-        <home-hello msg="MSG"></home-hello>
+        <post-form></post-form>
     </div>
 </template>
 
 <script>
-    import HomeHello from '@/components/HomeHello.vue';
+    import PostForm from '@/components/PostForm.vue';
     export default {
-        name: 'home',
+        name: 'PageHome',
         components: {
-            HomeHello,
+            PostForm,
         }
     }
 </script>

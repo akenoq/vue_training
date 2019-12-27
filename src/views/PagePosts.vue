@@ -17,12 +17,14 @@
 import PostItem from "../components/PostItem";
 import {mapGetters} from "vuex";
 export default {
-  name: 'posts',
+  name: 'PagePosts',
   components: {PostItem},
   data() {
     return {}
   },
   computed: {
+    // map гетеров и стейтов в computed
+
     // mapGetters ПРОКСИРУЕТ ГЕТТЕРЫ хранилища в локальные ВЫЧИСЛЯЕМЫЕ СВОЙСТВА компонента
     ...mapGetters(['getAllPosts']),
   },
