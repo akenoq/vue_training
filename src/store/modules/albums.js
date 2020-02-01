@@ -7,12 +7,19 @@ export default {
     getters: {
         getAllAlbums(state) {
             return state.albums;
-        }
+        },
+        albumCounter(state) {
+            return state.albums.length;
+        },
     },
     mutations: {
         setAlbums(state, albumsArr) {
             state.albums = albumsArr;
-        }
+        },
+        deleteAlbum(state, albumId) {
+            let index = state.albums.findIndex(a => a.id === albumId);
+            state.albums.splice(index, 1);
+        },
     },
     actions: {
         fetchAlbums({ commit, state }) {

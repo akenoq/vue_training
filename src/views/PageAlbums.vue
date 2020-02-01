@@ -1,6 +1,6 @@
 <template>
     <div>
-        Albums
+        Albums (количество: {{albumCounter}})
         <div class="albumList">
             <album-item v-for="a in getAllAlbums"
                         :key="a.id"
@@ -21,7 +21,7 @@
           return {}
         },
         computed: {
-            ...mapGetters(['getAllAlbums']), // мб другое имя для проксирования в стор
+            ...mapGetters(['getAllAlbums', 'albumCounter']), // мб другое имя для проксирования в стор
         },
         methods: {
             ...mapActions(['fetchAlbums']),

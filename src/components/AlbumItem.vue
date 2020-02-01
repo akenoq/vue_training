@@ -1,12 +1,22 @@
 <template>
-    <div class="albumBox">
-        <i>#{{id}}</i>
-        <p>{{title}}</p>
-        <i>UserId: {{userId}}</i>
-    </div>
+    <transition name="album">
+        <div class="albumBox">
+            <span>
+                <i>#{{id}}</i>
+                <button v-on:click="deleteAlbum(id)" class="deleteBtn">Delete</button>
+            </span>
+            <p>{{title}}</p>
+            <i>UserId: {{userId}}</i>
+
+
+
+        </div>
+    </transition>
 </template>
 
 <script>
+    import {mapMutations} from "vuex";
+
     export default {
         name: "AlbumItem",
         props: {
@@ -22,6 +32,9 @@
                 type: Number,
                 required: true,
             },
+        },
+        methods: {
+            ...mapMutations(['deleteAlbum']),
         }
     }
 </script>
@@ -38,5 +51,30 @@
             background: bisque;
             cursor: pointer;
         }
+
+        .deleteBtn {
+            height: 20px;
+            padding: 0 2px 0 0;
+            border: 1px solid #c9c9c9;
+            border-radius: 4px;
+            outline: none;
+
+            &:before {
+                content: "\274C";
+                padding-left: 2px;
+            }
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    .album-enter-active, .album-leave-active {
+      transition: all 0.5s;
+    }
+    .album-enter, .album-leave-to {
+        opacity: 0;
+        transform: translateX(300px);
     }
 </style>
