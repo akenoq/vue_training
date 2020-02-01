@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link :to="{name: 'home'}">Home</router-link>
       <router-link :to="{name: 'posts'}">Posts</router-link>
+      <router-link :to="{name: 'albums'}">Albums</router-link>
     </div>
     <router-view/> <!-- сюда рендерятся страницы по роуту -->
   </div>
