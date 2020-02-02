@@ -1,17 +1,14 @@
 <template>
-    <transition name="album">
-        <div class="albumBox">
-            <span>
-                <i>#{{id}}</i>
-                <button v-on:click="deleteAlbum(id)" class="deleteBtn">Delete</button>
-            </span>
-            <p>{{title}}</p>
-            <i>UserId: {{userId}}</i>
-
-
-
-        </div>
-    </transition>
+    <!--<transition name="album">-->
+    <div class="albumBox">
+        <span>
+            <i>#{{id}}</i>
+            <button v-on:click="deleteAlbum(id)" class="deleteBtn">Delete</button>
+        </span>
+        <p>{{title}}</p>
+        <i>UserId: {{userId}}</i>
+    </div>
+    <!--</transition>-->
 </template>
 
 <script>
@@ -58,6 +55,7 @@
             border: 1px solid #c9c9c9;
             border-radius: 4px;
             outline: none;
+            margin-left: 5px;
 
             &:before {
                 content: "\274C";
@@ -70,11 +68,14 @@
         }
     }
 
-    .album-enter-active, .album-leave-active {
-      transition: all 0.5s;
-    }
-    .album-enter, .album-leave-to {
-        opacity: 0;
-        transform: translateX(300px);
-    }
+    /* transition для анимации отдельного элемента
+        проблема такой анимации - резкое перемещение соседей
+        решается использованием transition-group и события v-move */
+    /*.album-enter-active, .album-leave-active {*/
+      /*transition: all 0.5s;*/
+    /*}*/
+    /*.album-enter, .album-leave-to {*/
+        /*opacity: 0;*/
+        /*transform: translateX(300px);*/
+    /*}*/
 </style>
